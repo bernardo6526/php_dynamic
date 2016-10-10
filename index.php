@@ -1,5 +1,31 @@
 <?php
 require 'arrays.php';
+session_start();
+
+function mask($val, $mask)
+{
+ $maskared = '';
+ $k = 0;
+ for($i = 0; $i<=strlen($mask)-1; $i++)
+ {
+ if($mask[$i] == '#')
+ {
+ if(isset($val[$k]))
+ $maskared .= $val[$k++];
+ }
+ else
+ {
+ if(isset($mask[$i]))
+ $maskared .= $mask[$i];
+ }
+ }
+ return $maskared;
+}
+
+$cpf = mask($_POST['cpf'],'###.###.###-##');
+$arraydata = str_split($_SESSION['data']);
+$data = $arraydata[8].$arraydata[9]."/".$arraydata[5].$arraydata[6]."/".$arraydata[0].$arraydata[1].$arraydata[2].$arraydata[3];
+
 $id = $_GET['botao'];
 $espaco = " ";
 $carai = "$nomes[$id]$espaco$cpf[$id]";
@@ -10,7 +36,7 @@ $t = "https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl=$nepossivel";
 $questao = array();
 for($i=1;$i<=63;$i++)
 {
-  $questao[$i] = "<img src = 'https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl=questao$i'/>";
+  $questao[$i] = "<img src = 'https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl=Questão%20$i'/>";
 
 }
 
@@ -49,7 +75,7 @@ for($i=1;$i<=63;$i++)
         <div class="qrcode"> <?php echo '<img src='.$t.'>'; ?> </div>
       </header>
 <!-- "img/students-codes/NOME-DO-ALUNO.png" -->
-      <h1>Faculdade de Ciências Médicas de Minas Gerais</h1>
+      <h1><?php ECHO $_SESSION['faculdade']; ?></h1>
       <h2>Graduação em Medicina</h2>
       <h3>Simulado Anasem - Avaliação Seriada dos Estudantes de Medicina</h3>
 
@@ -64,9 +90,9 @@ for($i=1;$i<=63;$i++)
           </thead>
           <tbody>
             <tr>
-              <td>Belo Horizonte</td>
-              <td>Prédio 1</td>
-              <td>601</td>
+              <td><?php ECHO $_SESSION['campus']; ?></td>
+              <td><?php ECHO $_SESSION['predio']; ?></td>
+              <td><?php ECHO $_SESSION['sala']; ?></td>
             </tr>
           </tbody>
         </table>
@@ -81,9 +107,9 @@ for($i=1;$i<=63;$i++)
           </thead>
           <tbody>
             <tr>
-              <td><?php ECHO $cpf[$id]; ?></td>
+              <td><?php ECHO $cpf; ?></td>
               <td>1º período</td>
-              <td>15/10/16</td>
+              <td><?php ECHO $data; ?></td>
             </tr>
           </tbody>
         </table>
@@ -91,7 +117,7 @@ for($i=1;$i<=63;$i++)
         <table class="form form-table name-table">
           <thead>
             <tr>
-              <th><?php ECHO $nomes[$id]; ?></th>
+              <th><?php ECHO $_POST['nome']; ?></th>
             </tr>
           </thead>
           <tbody>
