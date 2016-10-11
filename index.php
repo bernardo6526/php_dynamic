@@ -25,6 +25,7 @@ function mask($val, $mask)
 $cpf = mask($_POST['cpf'],'###.###.###-##');
 $arraydata = str_split($_SESSION['data']);
 $data = $arraydata[8].$arraydata[9]."/".$arraydata[5].$arraydata[6]."/".$arraydata[0].$arraydata[1].$arraydata[2].$arraydata[3];
+$nome = strtoupper($_POST['nome']);
 
 $id = $_GET['botao'];
 $espaco = " ";
@@ -75,7 +76,7 @@ for($i=1;$i<=63;$i++)
         <div class="qrcode"> <?php echo '<img src='.$t.'>'; ?> </div>
       </header>
 <!-- "img/students-codes/NOME-DO-ALUNO.png" -->
-      <h1>Faculdade de Ciências Médicas de Minas Gerais</h1>
+      <h1><?php ECHO ucfirst($_SESSION['faculdade']); ?></h1>
       <h2>Graduação em Medicina</h2>
       <h3>Simulado Anasem - Avaliação Seriada dos Estudantes de Medicina</h3>
 
@@ -90,8 +91,8 @@ for($i=1;$i<=63;$i++)
           </thead>
           <tbody>
             <tr>
-              <td><?php ECHO $_SESSION['campus']; ?></td>
-              <td><?php ECHO $_SESSION['predio']; ?></td>
+              <td><?php ECHO ucfirst($_SESSION['campus']); ?></td>
+              <td><?php ECHO ucfirst($_SESSION['predio']); ?></td>
               <td><?php ECHO $_SESSION['sala']; ?></td>
             </tr>
           </tbody>
@@ -117,7 +118,7 @@ for($i=1;$i<=63;$i++)
         <table class="form form-table name-table">
           <thead>
             <tr>
-              <th><?php ECHO $_POST['nome']; ?></th>
+              <th><?php ECHO $nome; ?></th>
             </tr>
           </thead>
           <tbody>
@@ -197,7 +198,7 @@ for($i=1;$i<=63;$i++)
         <div class="header-data">
           <dl class="dl-horizontal">
             <dt>Aluno</dt>
-            <dd><?php ECHO $_POST['nome']." ".$cpf; ?></dd>
+            <dd><?php ECHO $nome." ".$cpf; ?></dd>
             <dt>Prova</dt>
             <dd>Simulado Anasem</dd>
           </dl>
@@ -262,7 +263,7 @@ for($i=1;$i<=63;$i++)
         <div class="header-data">
           <dl class="dl-horizontal">
             <dt>Aluno</dt>
-            <dd><?php ECHO $_POST['nome']." ".$cpf; ?></dd>
+            <dd><?php ECHO $nome." ".$cpf; ?></dd>
             <dt>Prova</dt>
             <dd>Simulado Anasem</dd>
           </dl>
@@ -324,7 +325,7 @@ for($i=1;$i<=63;$i++)
         <div class="header-data">
           <dl class="dl-horizontal">
             <dt>Aluno</dt>
-            <dd><?php ECHO $_POST['nome']." ".$cpf; ?></dd>
+            <dd><?php ECHO $nome." ".$cpf; ?></dd>
             <dt>Prova</dt>
             <dd>Simulado Anasem</dd>
           </dl>
@@ -386,7 +387,7 @@ for($i=1;$i<=63;$i++)
         <div class="header-data">
           <dl class="dl-horizontal">
             <dt>Aluno</dt>
-            <dd><?php ECHO $_POST['nome']." ".$cpf; ?></dd>
+            <dd><?php ECHO $nome." ".$cpf; ?></dd>
             <dt>Prova</dt>
             <dd>Simulado Anasem</dd>
           </dl>
@@ -448,7 +449,7 @@ for($i=1;$i<=63;$i++)
         <div class="header-data">
           <dl class="dl-horizontal">
             <dt>Aluno</dt>
-            <dd><?php ECHO $_POST['nome']." ".$cpf; ?></dd>
+            <dd><?php ECHO $nome." ".$cpf; ?></dd>
             <dt>Prova</dt>
             <dd>Simulado Anasem</dd>
           </dl>
@@ -514,7 +515,7 @@ for($i=1;$i<=63;$i++)
         <div class="header-data">
           <dl class="dl-horizontal">
             <dt>Aluno</dt>
-            <dd><?php ECHO $_POST['nome']." ".$cpf; ?></dd>
+            <dd><?php ECHO $nome." ".$cpf; ?></dd>
             <dt>Prova</dt>
             <dd>Simulado Anasem</dd>
           </dl>
@@ -567,7 +568,7 @@ for($i=1;$i<=63;$i++)
         <div class="header-data">
           <dl class="dl-horizontal">
             <dt>Aluno</dt>
-            <dd><?php ECHO $_POST['nome']." ".$cpf; ?></dd>
+            <dd><?php ECHO $nome." ".$cpf; ?></dd>
             <dt>Prova</dt>
             <dd>Simulado Anasem</dd>
           </dl>
@@ -637,7 +638,7 @@ for($i=1;$i<=63;$i++)
         <div class="header-data">
           <dl class="dl-horizontal">
             <dt>Aluno</dt>
-            <dd><?php ECHO $_POST['nome']." ".$cpf; ?></dd>
+            <dd><?php ECHO $nome." ".$cpf; ?></dd>
             <dt>Prova</dt>
             <dd>Simulado Anasem</dd>
           </dl>
@@ -688,7 +689,7 @@ for($i=1;$i<=63;$i++)
         <div class="header-data">
           <dl class="dl-horizontal">
             <dt>Aluno</dt>
-            <dd><?php ECHO $_POST['nome']." ".$cpf; ?></dd>
+            <dd><?php ECHO $nome." ".$cpf; ?></dd>
             <dt>Prova</dt>
             <dd>Simulado Anasem</dd>
           </dl>
@@ -742,7 +743,7 @@ for($i=1;$i<=63;$i++)
         <div class="header-data">
           <dl class="dl-horizontal">
             <dt>Aluno</dt>
-            <dd><?php ECHO $_POST['nome']." ".$cpf; ?></dd>
+            <dd><?php ECHO $nome." ".$cpf; ?></dd>
             <dt>Prova</dt>
             <dd>Simulado Anasem</dd>
           </dl>
@@ -812,7 +813,7 @@ for($i=1;$i<=63;$i++)
         <div class="header-data">
           <dl class="dl-horizontal">
             <dt>Aluno</dt>
-            <dd><?php ECHO $_POST['nome']." ".$cpf; ?></dd>
+            <dd><?php ECHO $nome." ".$cpf; ?></dd>
             <dt>Prova</dt>
             <dd>Simulado Anasem</dd>
           </dl>
@@ -865,7 +866,7 @@ for($i=1;$i<=63;$i++)
         <div class="header-data">
           <dl class="dl-horizontal">
             <dt>Aluno</dt>
-            <dd><?php ECHO $_POST['nome']." ".$cpf; ?></dd>
+            <dd><?php ECHO $nome." ".$cpf; ?></dd>
             <dt>Prova</dt>
             <dd>Simulado Anasem</dd>
           </dl>
@@ -935,7 +936,7 @@ for($i=1;$i<=63;$i++)
         <div class="header-data">
           <dl class="dl-horizontal">
             <dt>Aluno</dt>
-            <dd><?php ECHO $_POST['nome']." ".$cpf; ?></dd>
+            <dd><?php ECHO $nome." ".$cpf; ?></dd>
             <dt>Prova</dt>
             <dd>Simulado Anasem</dd>
           </dl>
@@ -1016,7 +1017,7 @@ for($i=1;$i<=63;$i++)
         <div class="header-data">
           <dl class="dl-horizontal">
             <dt>Aluno</dt>
-            <dd><?php ECHO $_POST['nome']." ".$cpf; ?></dd>
+            <dd><?php ECHO $nome." ".$cpf; ?></dd>
             <dt>Prova</dt>
             <dd>Simulado Anasem</dd>
           </dl>
@@ -1080,7 +1081,7 @@ for($i=1;$i<=63;$i++)
         <div class="header-data">
           <dl class="dl-horizontal">
             <dt>Aluno</dt>
-            <dd><?php ECHO $_POST['nome']." ".$cpf; ?></dd>
+            <dd><?php ECHO $nome." ".$cpf; ?></dd>
             <dt>Prova</dt>
             <dd>Simulado Anasem</dd>
           </dl>
@@ -1143,7 +1144,7 @@ for($i=1;$i<=63;$i++)
         <div class="header-data">
           <dl class="dl-horizontal">
             <dt>Aluno</dt>
-            <dd><?php ECHO $_POST['nome']." ".$cpf; ?></dd>
+            <dd><?php ECHO $nome." ".$cpf; ?></dd>
             <dt>Prova</dt>
             <dd>Simulado Anasem</dd>
           </dl>
@@ -1191,7 +1192,7 @@ for($i=1;$i<=63;$i++)
         <div class="header-data">
           <dl class="dl-horizontal">
             <dt>Aluno</dt>
-            <dd><?php ECHO $_POST['nome']." ".$cpf; ?></dd>
+            <dd><?php ECHO $nome." ".$cpf; ?></dd>
             <dt>Prova</dt>
             <dd>Simulado Anasem</dd>
           </dl>
@@ -1240,7 +1241,7 @@ for($i=1;$i<=63;$i++)
         <div class="header-data">
           <dl class="dl-horizontal">
             <dt>Aluno</dt>
-            <dd><?php ECHO $_POST['nome']." ".$cpf; ?></dd>
+            <dd><?php ECHO $nome." ".$cpf; ?></dd>
             <dt>Prova</dt>
             <dd>Simulado Anasem</dd>
           </dl>
@@ -1290,7 +1291,7 @@ for($i=1;$i<=63;$i++)
         <div class="header-data">
           <dl class="dl-horizontal">
             <dt>Aluno</dt>
-            <dd><?php ECHO $_POST['nome']." ".$cpf; ?></dd>
+            <dd><?php ECHO $nome." ".$cpf; ?></dd>
             <dt>Prova</dt>
             <dd>Simulado Anasem</dd>
           </dl>
@@ -1353,7 +1354,7 @@ for($i=1;$i<=63;$i++)
         <div class="header-data">
           <dl class="dl-horizontal">
             <dt>Aluno</dt>
-            <dd><?php ECHO $_POST['nome']." ".$cpf; ?></dd>
+            <dd><?php ECHO $nome." ".$cpf; ?></dd>
             <dt>Prova</dt>
             <dd>Simulado Anasem</dd>
           </dl>
@@ -1455,7 +1456,7 @@ for($i=1;$i<=63;$i++)
         <div class="header-data">
           <dl class="dl-horizontal">
             <dt>Aluno</dt>
-            <dd><?php ECHO $_POST['nome']." ".$cpf; ?></dd>
+            <dd><?php ECHO $nome." ".$cpf; ?></dd>
             <dt>Prova</dt>
             <dd>Simulado Anasem</dd>
           </dl>
@@ -1517,7 +1518,7 @@ for($i=1;$i<=63;$i++)
         <div class="header-data">
           <dl class="dl-horizontal">
             <dt>Aluno</dt>
-            <dd><?php ECHO $_POST['nome']." ".$cpf; ?></dd>
+            <dd><?php ECHO $nome." ".$cpf; ?></dd>
             <dt>Prova</dt>
             <dd>Simulado Anasem</dd>
           </dl>
@@ -1567,7 +1568,7 @@ for($i=1;$i<=63;$i++)
         <div class="header-data">
           <dl class="dl-horizontal">
             <dt>Aluno</dt>
-            <dd><?php ECHO $_POST['nome']." ".$cpf; ?></dd>
+            <dd><?php ECHO $nome." ".$cpf; ?></dd>
             <dt>Prova</dt>
             <dd>Simulado Anasem</dd>
           </dl>
@@ -1628,7 +1629,7 @@ for($i=1;$i<=63;$i++)
         <div class="header-data">
           <dl class="dl-horizontal">
             <dt>Aluno</dt>
-            <dd><?php ECHO $_POST['nome']." ".$cpf; ?></dd>
+            <dd><?php ECHO $nome." ".$cpf; ?></dd>
             <dt>Prova</dt>
             <dd>Simulado Anasem</dd>
           </dl>
@@ -1685,7 +1686,7 @@ for($i=1;$i<=63;$i++)
         <div class="header-data">
           <dl class="dl-horizontal">
             <dt>Aluno</dt>
-            <dd><?php ECHO $_POST['nome']." ".$cpf; ?></dd>
+            <dd><?php ECHO $nome." ".$cpf; ?></dd>
             <dt>Prova</dt>
             <dd>Simulado Anasem</dd>
           </dl>
@@ -1749,7 +1750,7 @@ for($i=1;$i<=63;$i++)
         <div class="header-data">
           <dl class="dl-horizontal">
             <dt>Aluno</dt>
-            <dd><?php ECHO $_POST['nome']." ".$cpf; ?></dd>
+            <dd><?php ECHO $nome." ".$cpf; ?></dd>
             <dt>Prova</dt>
             <dd>Simulado Anasem</dd>
           </dl>
@@ -1806,7 +1807,7 @@ for($i=1;$i<=63;$i++)
         <div class="header-data">
           <dl class="dl-horizontal">
             <dt>Aluno</dt>
-            <dd><?php ECHO $_POST['nome']." ".$cpf; ?></dd>
+            <dd><?php ECHO $nome." ".$cpf; ?></dd>
             <dt>Prova</dt>
             <dd>Simulado Anasem</dd>
           </dl>
@@ -1880,7 +1881,7 @@ for($i=1;$i<=63;$i++)
         <div class="header-data">
           <dl class="dl-horizontal">
             <dt>Aluno</dt>
-            <dd><?php ECHO $_POST['nome']." ".$cpf; ?></dd>
+            <dd><?php ECHO $nome." ".$cpf; ?></dd>
             <dt>Prova</dt>
             <dd>Simulado Anasem</dd>
           </dl>
@@ -1956,7 +1957,7 @@ for($i=1;$i<=63;$i++)
         <div class="header-data">
           <dl class="dl-horizontal">
             <dt>Aluno</dt>
-            <dd><?php ECHO $_POST['nome']." ".$cpf; ?></dd>
+            <dd><?php ECHO $nome." ".$cpf; ?></dd>
             <dt>Prova</dt>
             <dd>Simulado Anasem</dd>
           </dl>
@@ -2021,7 +2022,7 @@ for($i=1;$i<=63;$i++)
         <div class="header-data">
           <dl class="dl-horizontal">
             <dt>Aluno</dt>
-            <dd><?php ECHO $_POST['nome']." ".$cpf; ?></dd>
+            <dd><?php ECHO $nome." ".$cpf; ?></dd>
             <dt>Prova</dt>
             <dd>Simulado Anasem</dd>
           </dl>
@@ -2097,7 +2098,7 @@ for($i=1;$i<=63;$i++)
         <div class="header-data">
           <dl class="dl-horizontal">
             <dt>Aluno</dt>
-            <dd><?php ECHO $_POST['nome']." ".$cpf; ?></dd>
+            <dd><?php ECHO $nome." ".$cpf; ?></dd>
             <dt>Prova</dt>
             <dd>Simulado Anasem</dd>
           </dl>
@@ -2173,7 +2174,7 @@ for($i=1;$i<=63;$i++)
         <div class="header-data">
           <dl class="dl-horizontal">
             <dt>Aluno</dt>
-            <dd><?php ECHO $_POST['nome']." ".$cpf; ?></dd>
+            <dd><?php ECHO $nome." ".$cpf; ?></dd>
             <dt>Prova</dt>
             <dd>Simulado Anasem</dd>
           </dl>
@@ -2247,7 +2248,7 @@ for($i=1;$i<=63;$i++)
         <div class="header-data">
           <dl class="dl-horizontal">
             <dt>Aluno</dt>
-            <dd><?php ECHO $_POST['nome']." ".$cpf; ?></dd>
+            <dd><?php ECHO $nome." ".$cpf; ?></dd>
             <dt>Prova</dt>
             <dd>Simulado Anasem</dd>
           </dl>
@@ -2296,7 +2297,7 @@ for($i=1;$i<=63;$i++)
         <div class="header-data">
           <dl class="dl-horizontal">
             <dt>Aluno</dt>
-            <dd><?php ECHO $_POST['nome']." ".$cpf; ?></dd>
+            <dd><?php ECHO $nome." ".$cpf; ?></dd>
             <dt>Prova</dt>
             <dd>Simulado Anasem</dd>
           </dl>
@@ -2345,7 +2346,7 @@ for($i=1;$i<=63;$i++)
         <div class="header-data">
           <dl class="dl-horizontal">
             <dt>Aluno</dt>
-            <dd><?php ECHO $_POST['nome']." ".$cpf; ?></dd>
+            <dd><?php ECHO $nome." ".$cpf; ?></dd>
             <dt>Prova</dt>
             <dd>Simulado Anasem</dd>
           </dl>
@@ -2396,7 +2397,7 @@ for($i=1;$i<=63;$i++)
         <div class="header-data">
           <dl class="dl-horizontal">
             <dt>Aluno</dt>
-            <dd><?php ECHO $_POST['nome']." ".$cpf; ?></dd>
+            <dd><?php ECHO $nome." ".$cpf; ?></dd>
             <dt>Prova</dt>
             <dd>Simulado Anasem</dd>
           </dl>
@@ -2447,7 +2448,7 @@ for($i=1;$i<=63;$i++)
         <div class="header-data">
           <dl class="dl-horizontal">
             <dt>Aluno</dt>
-            <dd><?php ECHO $_POST['nome']." ".$cpf; ?></dd>
+            <dd><?php ECHO $nome." ".$cpf; ?></dd>
             <dt>Prova</dt>
             <dd>Simulado Anasem</dd>
           </dl>
@@ -2495,7 +2496,7 @@ for($i=1;$i<=63;$i++)
         <div class="header-data">
           <dl class="dl-horizontal">
             <dt>Aluno</dt>
-            <dd><?php ECHO $_POST['nome']." ".$cpf; ?></dd>
+            <dd><?php ECHO $nome." ".$cpf; ?></dd>
             <dt>Prova</dt>
             <dd>Simulado Anasem</dd>
           </dl>
@@ -2543,7 +2544,7 @@ for($i=1;$i<=63;$i++)
         <div class="header-data">
           <dl class="dl-horizontal">
             <dt>Aluno</dt>
-            <dd><?php ECHO $_POST['nome']." ".$cpf; ?></dd>
+            <dd><?php ECHO $nome." ".$cpf; ?></dd>
             <dt>Prova</dt>
             <dd>Simulado Anasem</dd>
           </dl>
@@ -2588,7 +2589,7 @@ for($i=1;$i<=63;$i++)
         <div class="header-data">
           <dl class="dl-horizontal">
             <dt>Aluno</dt>
-            <dd><?php ECHO $_POST['nome']." ".$cpf; ?></dd>
+            <dd><?php ECHO $nome." ".$cpf; ?></dd>
             <dt>Prova</dt>
             <dd>Simulado Anasem</dd>
           </dl>
@@ -2637,7 +2638,7 @@ for($i=1;$i<=63;$i++)
         <div class="header-data">
           <dl class="dl-horizontal">
             <dt>Aluno</dt>
-            <dd><?php ECHO $_POST['nome']." ".$cpf; ?></dd>
+            <dd><?php ECHO $nome." ".$cpf; ?></dd>
             <dt>Prova</dt>
             <dd>Simulado Anasem</dd>
           </dl>
@@ -2858,7 +2859,7 @@ for($i=1;$i<=63;$i++)
         <div class="header-data">
           <dl class="dl-horizontal">
             <dt>Aluno</dt>
-            <dd><?php ECHO $_POST['nome']." ".$cpf; ?></dd>
+            <dd><?php ECHO $nome." ".$cpf; ?></dd>
             <dt>Prova</dt>
             <dd>Simulado Anasem</dd>
           </dl>
@@ -2929,7 +2930,7 @@ for($i=1;$i<=63;$i++)
         <div class="header-data">
           <dl class="dl-horizontal">
             <dt>Aluno</dt>
-            <dd><?php ECHO $_POST['nome']." ".$cpf; ?></dd>
+            <dd><?php ECHO $nome." ".$cpf; ?></dd>
             <dt>Prova</dt>
             <dd>Simulado Anasem</dd>
           </dl>
@@ -2999,7 +3000,7 @@ for($i=1;$i<=63;$i++)
         <div class="header-data">
           <dl class="dl-horizontal">
             <dt>Aluno</dt>
-            <dd><?php ECHO $_POST['nome']." ".$cpf; ?></dd>
+            <dd><?php ECHO $nome." ".$cpf; ?></dd>
             <dt>Prova</dt>
             <dd>Simulado Anasem</dd>
           </dl>
@@ -3072,7 +3073,7 @@ for($i=1;$i<=63;$i++)
         <div class="header-data">
           <dl class="dl-horizontal">
             <dt>Aluno</dt>
-            <dd><?php ECHO $_POST['nome']." ".$cpf; ?></dd>
+            <dd><?php ECHO $nome." ".$cpf; ?></dd>
             <dt>Prova</dt>
             <dd>Simulado Anasem</dd>
           </dl>
