@@ -75,7 +75,7 @@ for($i=1;$i<=63;$i++)
         <div class="qrcode"> <?php echo '<img src='.$t.'>'; ?> </div>
       </header>
 <!-- "img/students-codes/NOME-DO-ALUNO.png" -->
-      <h1><?php ECHO $_SESSION['faculdade']; ?></h1>
+      <h1>Faculdade de Ciências Médicas de Minas Gerais</h1>
       <h2>Graduação em Medicina</h2>
       <h3>Simulado Anasem - Avaliação Seriada dos Estudantes de Medicina</h3>
 
@@ -108,7 +108,7 @@ for($i=1;$i<=63;$i++)
           <tbody>
             <tr>
               <td><?php ECHO $cpf; ?></td>
-              <td>1º período</td>
+              <td>-</td>
               <td><?php ECHO $data; ?></td>
             </tr>
           </tbody>
@@ -140,7 +140,7 @@ for($i=1;$i<=63;$i++)
         <ol class="instructions">
           <li>Verifique se sua prova contém, nas últimas páginas, o Caderno de Respostas, destinado à transcrição das respostas das questões de múltipla escolha (objetivas), das questões discursivas e do questionário de percepção da prova.</li>
           <li>Confira se este caderno contém as questões de múltipla escolha (objetivas) e as discursivas de formação específica. As questões estão assim distribuídas:
-            <table class="table table-condensed">
+            <table class="table table-condensed table-bordered">
               <thead>
                 <tr>
                   <th>Partes</th>
@@ -159,13 +159,28 @@ for($i=1;$i<=63;$i++)
               </tbody>
             </table>
           </li>
-          <li>Verifique se a prova está completa e se o seu nome está correto. Caso contrário, avise imediatamente um dos responsáveis pela aplicação da prova. Você deve assinar o Caderno de Respostas no espaço próprio, com caneta esferográfica de tinta preta.</li>
-          <li>Observe as instruções sobre a marcação das respostas das questões de múltipla escolha (apenas uma resposta por questão), expressas no Caderno de Respostas.</li>
+          <li>Verifique se a prova está completa e se o seu nome está correto. Caso contrário, avise imediatamente um dos responsáveis pela aplicação da prova. Você deve assinar o Caderno de Respostas no espaço próprio.</li>
           <li>Use caneta esferográfica de tinta preta, tanto para marcar as respostas das questões objetivas quanto para escrever as respostas das questões discursivas.</li>
-          <li>Não use calculadora; não se comunique com os demais estudantes nem troque material com eles; não consulte material bibliográfico, cadernos ou anotações de qualquer espécie.</li>
+          <li>Para as questões de múltipla escolha, marque apenas uma resposta com caneta esferográfica de tinta preta da seguinte forma:
+            <table class="table table-condensed table-bordered text-center">
+              <tr>
+                <th>certo</th>
+                <th>errado</th>
+                <th>errado</th>
+                <th>errado</th>
+              </tr>
+              <tr>
+                <th><span class="gabarito-item" style="background-color: #000000"></span></th>
+                <th><span class="gabarito-item" style="background-image: url(img/wrong-example-01.png)">A</span></th>
+                <th><span class="gabarito-item" style="background-image: url(img/wrong-example-02.png)">A</span></th>
+                <th><span class="gabarito-item" style="background-image: url(img/wrong-example-03.png)">A</span></th>
+              </tr>
+            </table>
+          </li>
+          <li>Não se comunique com os demais estudantes nem troque material com eles; não consulte material bibliográfico, cadernos ou anotações de qualquer espécie.</li>
           <li>Você terá quatro horas para responder às questões de múltipla escolha e discursivas e ao questionário de percepção da prova.</li>
-          <li>Quando terminar, entregue ao Aplicador ou Fiscal o seu Caderno de Respostas.</li>
-          <li>Atenção! Você deverá permanecer, no mínimo, por uma hora, na sala de aplicação das provas.</li>
+          <li>Quando terminar, entregue ao aplicador ou fiscal a sua prova com o Caderno de Respostas.</li>
+          <li>Atenção! Você deverá permanecer, no mínimo, por uma hora na sala de aplicação das provas.</li>
         </ol>
       </div>
       <footer>
@@ -182,7 +197,7 @@ for($i=1;$i<=63;$i++)
         <div class="header-data">
           <dl class="dl-horizontal">
             <dt>Aluno</dt>
-            <dd><?php echo $nomes[$id].", ".$cpf[$id]; ?></dd>
+            <dd><?php ECHO $_POST['nome']." ".$cpf; ?></dd>
             <dt>Prova</dt>
             <dd>Simulado Anasem</dd>
           </dl>
@@ -247,7 +262,7 @@ for($i=1;$i<=63;$i++)
         <div class="header-data">
           <dl class="dl-horizontal">
             <dt>Aluno</dt>
-            <dd><?php echo $nomes[$id].", ".$cpf[$id]; ?></dd>
+            <dd><?php ECHO $_POST['nome']." ".$cpf; ?></dd>
             <dt>Prova</dt>
             <dd>Simulado Anasem</dd>
           </dl>
@@ -309,7 +324,7 @@ for($i=1;$i<=63;$i++)
         <div class="header-data">
           <dl class="dl-horizontal">
             <dt>Aluno</dt>
-            <dd><?php echo $nomes[$id].", ".$cpf[$id]; ?></dd>
+            <dd><?php ECHO $_POST['nome']." ".$cpf; ?></dd>
             <dt>Prova</dt>
             <dd>Simulado Anasem</dd>
           </dl>
@@ -371,7 +386,7 @@ for($i=1;$i<=63;$i++)
         <div class="header-data">
           <dl class="dl-horizontal">
             <dt>Aluno</dt>
-            <dd><?php echo $nomes[$id].", ".$cpf[$id]; ?></dd>
+            <dd><?php ECHO $_POST['nome']." ".$cpf; ?></dd>
             <dt>Prova</dt>
             <dd>Simulado Anasem</dd>
           </dl>
@@ -433,7 +448,7 @@ for($i=1;$i<=63;$i++)
         <div class="header-data">
           <dl class="dl-horizontal">
             <dt>Aluno</dt>
-            <dd><?php echo $nomes[$id].", ".$cpf[$id]; ?></dd>
+            <dd><?php ECHO $_POST['nome']." ".$cpf; ?></dd>
             <dt>Prova</dt>
             <dd>Simulado Anasem</dd>
           </dl>
@@ -499,7 +514,7 @@ for($i=1;$i<=63;$i++)
         <div class="header-data">
           <dl class="dl-horizontal">
             <dt>Aluno</dt>
-            <dd><?php echo $nomes[$id].", ".$cpf[$id]; ?></dd>
+            <dd><?php ECHO $_POST['nome']." ".$cpf; ?></dd>
             <dt>Prova</dt>
             <dd>Simulado Anasem</dd>
           </dl>
@@ -552,7 +567,7 @@ for($i=1;$i<=63;$i++)
         <div class="header-data">
           <dl class="dl-horizontal">
             <dt>Aluno</dt>
-            <dd><?php echo $nomes[$id].", ".$cpf[$id]; ?></dd>
+            <dd><?php ECHO $_POST['nome']." ".$cpf; ?></dd>
             <dt>Prova</dt>
             <dd>Simulado Anasem</dd>
           </dl>
@@ -570,7 +585,7 @@ for($i=1;$i<=63;$i++)
         <!-- QUESTAO -->
         <div class="item">
           <div class="ennunciation-container">
-            <div class="ennunciation"><p>O pneumotórax simples é caracterizado por um quadro em que temos a entrada de ar no espaço pleural, comprometendo a ventilação pulmonar. Tal condição promove alterações nas características da pressão pleural que, juntamente com a pressão alveolar, estão diretamente relacionadas com a expansão pulmonar. <br /> Acerca do comportamento dessas pressões é correto afirmar que:</p>
+            <div class="ennunciation"><p>O pneumotórax simples é caracterizado por um quadro em que temos a entrada de ar no espaço pleural, comprometendo a ventilação pulmonar. Tal condição promove alterações nas características da pressão pleural que, juntamente com a pressão alveolar, estão diretamente relacionadas com a expansão pulmonar. <br /> Acerca do comportamento dessas pressões numa pessoa normal, é correto afirmar que:</p>
 
 
             </div><div class="qrcode"><?php ECHO $questao[12]; ?></div>
@@ -622,7 +637,7 @@ for($i=1;$i<=63;$i++)
         <div class="header-data">
           <dl class="dl-horizontal">
             <dt>Aluno</dt>
-            <dd><?php echo $nomes[$id].", ".$cpf[$id]; ?></dd>
+            <dd><?php ECHO $_POST['nome']." ".$cpf; ?></dd>
             <dt>Prova</dt>
             <dd>Simulado Anasem</dd>
           </dl>
@@ -673,7 +688,7 @@ for($i=1;$i<=63;$i++)
         <div class="header-data">
           <dl class="dl-horizontal">
             <dt>Aluno</dt>
-            <dd><?php echo $nomes[$id].", ".$cpf[$id]; ?></dd>
+            <dd><?php ECHO $_POST['nome']." ".$cpf; ?></dd>
             <dt>Prova</dt>
             <dd>Simulado Anasem</dd>
           </dl>
@@ -727,7 +742,7 @@ for($i=1;$i<=63;$i++)
         <div class="header-data">
           <dl class="dl-horizontal">
             <dt>Aluno</dt>
-            <dd><?php echo $nomes[$id].", ".$cpf[$id]; ?></dd>
+            <dd><?php ECHO $_POST['nome']." ".$cpf; ?></dd>
             <dt>Prova</dt>
             <dd>Simulado Anasem</dd>
           </dl>
@@ -797,7 +812,7 @@ for($i=1;$i<=63;$i++)
         <div class="header-data">
           <dl class="dl-horizontal">
             <dt>Aluno</dt>
-            <dd><?php echo $nomes[$id].", ".$cpf[$id]; ?></dd>
+            <dd><?php ECHO $_POST['nome']." ".$cpf; ?></dd>
             <dt>Prova</dt>
             <dd>Simulado Anasem</dd>
           </dl>
@@ -850,7 +865,7 @@ for($i=1;$i<=63;$i++)
         <div class="header-data">
           <dl class="dl-horizontal">
             <dt>Aluno</dt>
-            <dd><?php echo $nomes[$id].", ".$cpf[$id]; ?></dd>
+            <dd><?php ECHO $_POST['nome']." ".$cpf; ?></dd>
             <dt>Prova</dt>
             <dd>Simulado Anasem</dd>
           </dl>
@@ -920,7 +935,7 @@ for($i=1;$i<=63;$i++)
         <div class="header-data">
           <dl class="dl-horizontal">
             <dt>Aluno</dt>
-            <dd><?php echo $nomes[$id].", ".$cpf[$id]; ?></dd>
+            <dd><?php ECHO $_POST['nome']." ".$cpf; ?></dd>
             <dt>Prova</dt>
             <dd>Simulado Anasem</dd>
           </dl>
@@ -1001,7 +1016,7 @@ for($i=1;$i<=63;$i++)
         <div class="header-data">
           <dl class="dl-horizontal">
             <dt>Aluno</dt>
-            <dd><?php echo $nomes[$id].", ".$cpf[$id]; ?></dd>
+            <dd><?php ECHO $_POST['nome']." ".$cpf; ?></dd>
             <dt>Prova</dt>
             <dd>Simulado Anasem</dd>
           </dl>
@@ -1065,7 +1080,7 @@ for($i=1;$i<=63;$i++)
         <div class="header-data">
           <dl class="dl-horizontal">
             <dt>Aluno</dt>
-            <dd><?php echo $nomes[$id].", ".$cpf[$id]; ?></dd>
+            <dd><?php ECHO $_POST['nome']." ".$cpf; ?></dd>
             <dt>Prova</dt>
             <dd>Simulado Anasem</dd>
           </dl>
@@ -1083,7 +1098,7 @@ for($i=1;$i<=63;$i++)
         <!-- QUESTAO -->
         <div class="item">
           <div class="ennunciation-container">
-            <div class="ennunciation"><p> Homem de 28 anos comparece à Unidade Básica de Saúde para participar da campanha Novembro Azul e passa por avaliação clínica realizada pelo médico clínico geral, com a preocupação referente a prováveis alterações que possa apresentar. A partir do conhecimento da anatomia do sistema genital masculino, <br> É correto afirmar que:</p>
+            <div class="ennunciation"><p> Homem de 28 anos comparece à Unidade Básica de Saúde para participar da campanha Novembro Azul e passa por avaliação clínica realizada pelo médico clínico geral, com a preocupação referente a prováveis alterações que possa apresentar.<br> A partir do conhecimento da anatomia do sistema genital masculino, é correto afirmar que:</p>
             </div><div class="qrcode"><?php ECHO $questao[26]; ?></div>
           </div>
           <div class="alternatives-container">
@@ -1128,7 +1143,7 @@ for($i=1;$i<=63;$i++)
         <div class="header-data">
           <dl class="dl-horizontal">
             <dt>Aluno</dt>
-            <dd><?php echo $nomes[$id].", ".$cpf[$id]; ?></dd>
+            <dd><?php ECHO $_POST['nome']." ".$cpf; ?></dd>
             <dt>Prova</dt>
             <dd>Simulado Anasem</dd>
           </dl>
@@ -1176,7 +1191,7 @@ for($i=1;$i<=63;$i++)
         <div class="header-data">
           <dl class="dl-horizontal">
             <dt>Aluno</dt>
-            <dd><?php echo $nomes[$id].", ".$cpf[$id]; ?></dd>
+            <dd><?php ECHO $_POST['nome']." ".$cpf; ?></dd>
             <dt>Prova</dt>
             <dd>Simulado Anasem</dd>
           </dl>
@@ -1225,7 +1240,7 @@ for($i=1;$i<=63;$i++)
         <div class="header-data">
           <dl class="dl-horizontal">
             <dt>Aluno</dt>
-            <dd><?php echo $nomes[$id].", ".$cpf[$id]; ?></dd>
+            <dd><?php ECHO $_POST['nome']." ".$cpf; ?></dd>
             <dt>Prova</dt>
             <dd>Simulado Anasem</dd>
           </dl>
@@ -1243,10 +1258,12 @@ for($i=1;$i<=63;$i++)
         <!-- QUESTAO -->
         <div class="item">
           <div class="ennunciation-container">
-            <div class="ennunciation"><p><em> (...) Vários modelos foram propostos para estudar os determinantes sociais e a trama de relações entre os diversos fatores estudados através desses diversos enfoques. Um adotado pela CNDSS é o modelo de Dahlgren e Whitehead que inclui os DSS dispostos em diferentes camadas, desde uma camada mais próxima dos determinantes individuais até uma camada distal, onde se situam os macro determinantes, relacionados às condições econômicas, culturais e ambientais da sociedade e que possuem grande influência sobre as demais camadas. Os indivíduos estão na base do modelo, com suas características individuais de idade, sexo e fatores genéticos.</em><br></p>
-            <p class="reference"> Adaptado de: Carvalho, I. & Buss, P. in Determinantes Sociais na Saúde.pdf, acesso em 20/09/2016.</p>
-            O modelo de Dahlgren e Whitehead é mostrado na figura a seguir:</p>
-            <div class="ennunciation-img-container"><img src="img/questao32.png"></div>
+            <div class="ennunciation">
+              <p><em> (...) Vários modelos foram propostos para estudar os determinantes sociais e a trama de relações entre os diversos fatores estudados através desses diversos enfoques. Um adotado pela CNDSS é o modelo de Dahlgren e Whitehead que inclui os DSS dispostos em diferentes camadas, desde uma camada mais próxima dos determinantes individuais até uma camada distal, onde se situam os macro determinantes, relacionados às condições econômicas, culturais e ambientais da sociedade e que possuem grande influência sobre as demais camadas. Os indivíduos estão na base do modelo, com suas características individuais de idade, sexo e fatores genéticos.</em></p>
+              <p class="reference"> Adaptado de: Carvalho, I. & Buss, P. in Determinantes Sociais na Saúde.pdf, acesso em 20/09/2016.</p>
+              <p>O modelo de Dahlgren e Whitehead é mostrado na figura a seguir:</p>
+              <div class="ennunciation-img-container"><img src="img/questao32.png"></div>
+              <p>Neste diagrama a camada X refere-se ao Estilo de Vida da pessoa. Y e Z referem-se, respectivamente à</p>
             </div><div class="qrcode"><?php ECHO $questao[30]; ?></div>
           </div>
           <div class="alternatives-container">
@@ -1273,7 +1290,7 @@ for($i=1;$i<=63;$i++)
         <div class="header-data">
           <dl class="dl-horizontal">
             <dt>Aluno</dt>
-            <dd><?php echo $nomes[$id].", ".$cpf[$id]; ?></dd>
+            <dd><?php ECHO $_POST['nome']." ".$cpf; ?></dd>
             <dt>Prova</dt>
             <dd>Simulado Anasem</dd>
           </dl>
@@ -1336,7 +1353,7 @@ for($i=1;$i<=63;$i++)
         <div class="header-data">
           <dl class="dl-horizontal">
             <dt>Aluno</dt>
-            <dd><?php echo $nomes[$id].", ".$cpf[$id]; ?></dd>
+            <dd><?php ECHO $_POST['nome']." ".$cpf; ?></dd>
             <dt>Prova</dt>
             <dd>Simulado Anasem</dd>
           </dl>
@@ -1438,7 +1455,7 @@ for($i=1;$i<=63;$i++)
         <div class="header-data">
           <dl class="dl-horizontal">
             <dt>Aluno</dt>
-            <dd><?php echo $nomes[$id].", ".$cpf[$id]; ?></dd>
+            <dd><?php ECHO $_POST['nome']." ".$cpf; ?></dd>
             <dt>Prova</dt>
             <dd>Simulado Anasem</dd>
           </dl>
@@ -1500,7 +1517,7 @@ for($i=1;$i<=63;$i++)
         <div class="header-data">
           <dl class="dl-horizontal">
             <dt>Aluno</dt>
-            <dd><?php echo $nomes[$id].", ".$cpf[$id]; ?></dd>
+            <dd><?php ECHO $_POST['nome']." ".$cpf; ?></dd>
             <dt>Prova</dt>
             <dd>Simulado Anasem</dd>
           </dl>
@@ -1550,7 +1567,7 @@ for($i=1;$i<=63;$i++)
         <div class="header-data">
           <dl class="dl-horizontal">
             <dt>Aluno</dt>
-            <dd><?php echo $nomes[$id].", ".$cpf[$id]; ?></dd>
+            <dd><?php ECHO $_POST['nome']." ".$cpf; ?></dd>
             <dt>Prova</dt>
             <dd>Simulado Anasem</dd>
           </dl>
@@ -1611,7 +1628,7 @@ for($i=1;$i<=63;$i++)
         <div class="header-data">
           <dl class="dl-horizontal">
             <dt>Aluno</dt>
-            <dd><?php echo $nomes[$id].", ".$cpf[$id]; ?></dd>
+            <dd><?php ECHO $_POST['nome']." ".$cpf; ?></dd>
             <dt>Prova</dt>
             <dd>Simulado Anasem</dd>
           </dl>
@@ -1668,7 +1685,7 @@ for($i=1;$i<=63;$i++)
         <div class="header-data">
           <dl class="dl-horizontal">
             <dt>Aluno</dt>
-            <dd><?php echo $nomes[$id].", ".$cpf[$id]; ?></dd>
+            <dd><?php ECHO $_POST['nome']." ".$cpf; ?></dd>
             <dt>Prova</dt>
             <dd>Simulado Anasem</dd>
           </dl>
@@ -1732,7 +1749,7 @@ for($i=1;$i<=63;$i++)
         <div class="header-data">
           <dl class="dl-horizontal">
             <dt>Aluno</dt>
-            <dd><?php echo $nomes[$id].", ".$cpf[$id]; ?></dd>
+            <dd><?php ECHO $_POST['nome']." ".$cpf; ?></dd>
             <dt>Prova</dt>
             <dd>Simulado Anasem</dd>
           </dl>
@@ -1753,16 +1770,14 @@ for($i=1;$i<=63;$i++)
             <div class="ennunciation"><p>Os profissionais das Unidades Básicas de Saúde (UBS) são responsáveis pelas ações de prevenção e controle da dengue. Estas ações devem fazer parte das rotinas e estarem integradas às demais ações desenvolvidas nestas unidades. A respeito das atribuições do Agente Comunitário de Saúde são feitas as seguintes afirmações:</p>
 
             <ol class="roman-numbers">
-           <li>promover reuniões com a comunidade com o objetivo de mobilizá-la para as ações de prevenção e controle da dengue.</li>
-           <li>vistoriar imóveis não residenciais, acompanhado pelo responsável, para identificar locais de existência de objetos que sejam ou possam se transformar em criadouros.</li>
-           <li>orientar e acompanhar o morador na remoção, destruição ou vedação de objetos que possam se transformar em criadouros de mosquitos.</li>
-           <li>remover mecanicamente os ovos e larvas do mosquito.</li>
-           <li>vistoriar e tratar com aplicação de larvicida, caso seja necessário, os pontos estratégicos.</li>
+             <li>promover reuniões com a comunidade com o objetivo de mobilizá-la para as ações de prevenção e controle da dengue.</li>
+             <li>vistoriar imóveis não residenciais, acompanhado pelo responsável, para identificar locais de existência de objetos que sejam ou possam se transformar em criadouros.</li>
+             <li>orientar e acompanhar o morador na remoção, destruição ou vedação de objetos que possam se transformar em criadouros de mosquitos.</li>
+             <li>remover mecanicamente os ovos e larvas do mosquito.</li>
+             <li>vistoriar e tratar com aplicação de larvicida, caso seja necessário, os pontos estratégicos.</li>
             </ol>
 
-
-            <p>Das atribuições acima, estão corretas apenas:
-            </p>
+            <p>Das atribuições acima, estão corretas apenas:</p>
             </div><div class="qrcode"><?php ECHO $questao[41]; ?></div>
           </div>
           <div class="alternatives-container">
@@ -1791,7 +1806,7 @@ for($i=1;$i<=63;$i++)
         <div class="header-data">
           <dl class="dl-horizontal">
             <dt>Aluno</dt>
-            <dd><?php echo $nomes[$id].", ".$cpf[$id]; ?></dd>
+            <dd><?php ECHO $_POST['nome']." ".$cpf; ?></dd>
             <dt>Prova</dt>
             <dd>Simulado Anasem</dd>
           </dl>
@@ -1809,14 +1824,14 @@ for($i=1;$i<=63;$i++)
         <!-- QUESTAO -->
         <div class="item">
           <div class="ennunciation-container">
-            <div class="ennunciation"><p>Em relação aos princípios ou diretrizes do SUS, definidos pela Lei Orgânica da Saúde são feitas as seguintes afirmações:</p>
+            <div class="ennunciation"><p>Em relação aos princípios ou diretrizes do SUS, definidos pela Lei Orgânica da Saúde são feitas as seguintes afirmações:</p>
 
             <ol class="roman-numbers">
-           <li>descentralização dos serviços para os municípios com direção única em cada esfera do governo.</li>
-           <li>integralidade da assistência à saúde, incorporando ações e serviços individuais e coletivos, preventivos e curativos.</li>
-           <li>liberdade da iniciativa privada para prestar assistência técnica à saúde.</li>
-           <li>saúde como direito de todos e dever do Estado.</li>
-           <li>universalidade do acesso ao sistema, com atendimento preferencial à população de baixa renda.</li>
+             <li>descentralização dos serviços para os municípios com direção única em cada esfera do governo</li>
+             <li>integralidade da assistência à saúde, incorporando ações e serviços individuais e coletivos, preventivos e curativos</li>
+             <li>liberdade da iniciativa privada para prestar assistência técnica à saúde</li>
+             <li>saúde como direito de todos e dever do Estado</li>
+             <li>universalidade do acesso ao sistema, com atendimento preferencial à população de baixa renda</li>
             </ol>
 
 
@@ -1826,10 +1841,10 @@ for($i=1;$i<=63;$i++)
           </div>
           <div class="alternatives-container">
             <ol class="alternatives">
-              <li>I, II e III.</li>
-              <li>II, III e IV.</li>
-              <li>II, IV e V.</li>
-              <li>I, III e IV.</li>
+              <li>I, II e IV.</li>
+              <li>I, III e V.</li>
+              <li>I e II.</li>
+              <li>I, II, III e IV.</li>
             </ol>
           </div>
         </div><!--/.item-->
@@ -1865,7 +1880,7 @@ for($i=1;$i<=63;$i++)
         <div class="header-data">
           <dl class="dl-horizontal">
             <dt>Aluno</dt>
-            <dd><?php echo $nomes[$id].", ".$cpf[$id]; ?></dd>
+            <dd><?php ECHO $_POST['nome']." ".$cpf; ?></dd>
             <dt>Prova</dt>
             <dd>Simulado Anasem</dd>
           </dl>
@@ -1883,10 +1898,9 @@ for($i=1;$i<=63;$i++)
         <!-- QUESTAO -->
         <div class="item">
           <div class="ennunciation-container">
-            <div class="ennunciation"><p>Carlos é um menino de 2 anos, levado a um hospital porque tem febre. 
-              O médico que o examina detecta um severo comprometimento geral no estado de Carlos, grande irritabilidade e, no exame clínico encontra rigidez na nuca, e explica aos pais que será necessária uma punção lombar para detectar uma possível meningites. Informa que se for este o caso, o tratamento deve ser imediato. Os pais do menino não aceitam este procedimento, pois acreditam que ele é de grande risco. O médico tenta, em vão, chegar a um consenso para mudar a decisão dos pais. Diz, finalmente, que fará a punção.<br>
-              Do ponto de vista ético, a atitude do médico está
-            </p>
+            <div class="ennunciation">
+              <p>Um menino de 2 anos é levado a um hospital porque tem febre. O médico que o examina detecta um severo comprometimento geral no estado da criança, grande irritabilidade e, no exame clínico encontra rigidez na nuca, e explica aos pais que será necessária uma punção lombar para detectar uma possível meningites. Informa que se for este o caso, o tratamento deve ser imediato. Os pais do menino não aceitam este procedimento, pois acreditam que ele é de grande risco. O médico tenta, em vão, chegar a um consenso para mudar a decisão dos pais. Diz, finalmente, que fará a punção.</p>
+              <p>Do ponto de vista ético, a atitude do médico está</p>
             </div><div class="qrcode"><?php ECHO $questao[44]; ?></div>
           </div>
           <div class="alternatives-container">
@@ -1942,7 +1956,7 @@ for($i=1;$i<=63;$i++)
         <div class="header-data">
           <dl class="dl-horizontal">
             <dt>Aluno</dt>
-            <dd><?php echo $nomes[$id].", ".$cpf[$id]; ?></dd>
+            <dd><?php ECHO $_POST['nome']." ".$cpf; ?></dd>
             <dt>Prova</dt>
             <dd>Simulado Anasem</dd>
           </dl>
@@ -2007,7 +2021,7 @@ for($i=1;$i<=63;$i++)
         <div class="header-data">
           <dl class="dl-horizontal">
             <dt>Aluno</dt>
-            <dd><?php echo $nomes[$id].", ".$cpf[$id]; ?></dd>
+            <dd><?php ECHO $_POST['nome']." ".$cpf; ?></dd>
             <dt>Prova</dt>
             <dd>Simulado Anasem</dd>
           </dl>
@@ -2083,7 +2097,7 @@ for($i=1;$i<=63;$i++)
         <div class="header-data">
           <dl class="dl-horizontal">
             <dt>Aluno</dt>
-            <dd><?php echo $nomes[$id].", ".$cpf[$id]; ?></dd>
+            <dd><?php ECHO $_POST['nome']." ".$cpf; ?></dd>
             <dt>Prova</dt>
             <dd>Simulado Anasem</dd>
           </dl>
@@ -2159,7 +2173,7 @@ for($i=1;$i<=63;$i++)
         <div class="header-data">
           <dl class="dl-horizontal">
             <dt>Aluno</dt>
-            <dd><?php echo $nomes[$id].", ".$cpf[$id]; ?></dd>
+            <dd><?php ECHO $_POST['nome']." ".$cpf; ?></dd>
             <dt>Prova</dt>
             <dd>Simulado Anasem</dd>
           </dl>
@@ -2233,7 +2247,7 @@ for($i=1;$i<=63;$i++)
         <div class="header-data">
           <dl class="dl-horizontal">
             <dt>Aluno</dt>
-            <dd><?php echo $nomes[$id].", ".$cpf[$id]; ?></dd>
+            <dd><?php ECHO $_POST['nome']." ".$cpf; ?></dd>
             <dt>Prova</dt>
             <dd>Simulado Anasem</dd>
           </dl>
@@ -2282,7 +2296,7 @@ for($i=1;$i<=63;$i++)
         <div class="header-data">
           <dl class="dl-horizontal">
             <dt>Aluno</dt>
-            <dd><?php echo $nomes[$id].", ".$cpf[$id]; ?></dd>
+            <dd><?php ECHO $_POST['nome']." ".$cpf; ?></dd>
             <dt>Prova</dt>
             <dd>Simulado Anasem</dd>
           </dl>
@@ -2331,7 +2345,7 @@ for($i=1;$i<=63;$i++)
         <div class="header-data">
           <dl class="dl-horizontal">
             <dt>Aluno</dt>
-            <dd><?php echo $nomes[$id].", ".$cpf[$id]; ?></dd>
+            <dd><?php ECHO $_POST['nome']." ".$cpf; ?></dd>
             <dt>Prova</dt>
             <dd>Simulado Anasem</dd>
           </dl>
@@ -2382,7 +2396,7 @@ for($i=1;$i<=63;$i++)
         <div class="header-data">
           <dl class="dl-horizontal">
             <dt>Aluno</dt>
-            <dd><?php echo $nomes[$id].", ".$cpf[$id]; ?></dd>
+            <dd><?php ECHO $_POST['nome']." ".$cpf; ?></dd>
             <dt>Prova</dt>
             <dd>Simulado Anasem</dd>
           </dl>
@@ -2433,7 +2447,7 @@ for($i=1;$i<=63;$i++)
         <div class="header-data">
           <dl class="dl-horizontal">
             <dt>Aluno</dt>
-            <dd><?php echo $nomes[$id].", ".$cpf[$id]; ?></dd>
+            <dd><?php ECHO $_POST['nome']." ".$cpf; ?></dd>
             <dt>Prova</dt>
             <dd>Simulado Anasem</dd>
           </dl>
@@ -2481,7 +2495,7 @@ for($i=1;$i<=63;$i++)
         <div class="header-data">
           <dl class="dl-horizontal">
             <dt>Aluno</dt>
-            <dd><?php echo $nomes[$id].", ".$cpf[$id]; ?></dd>
+            <dd><?php ECHO $_POST['nome']." ".$cpf; ?></dd>
             <dt>Prova</dt>
             <dd>Simulado Anasem</dd>
           </dl>
@@ -2529,7 +2543,7 @@ for($i=1;$i<=63;$i++)
         <div class="header-data">
           <dl class="dl-horizontal">
             <dt>Aluno</dt>
-            <dd><?php echo $nomes[$id].", ".$cpf[$id]; ?></dd>
+            <dd><?php ECHO $_POST['nome']." ".$cpf; ?></dd>
             <dt>Prova</dt>
             <dd>Simulado Anasem</dd>
           </dl>
@@ -2574,7 +2588,7 @@ for($i=1;$i<=63;$i++)
         <div class="header-data">
           <dl class="dl-horizontal">
             <dt>Aluno</dt>
-            <dd><?php echo $nomes[$id].", ".$cpf[$id]; ?></dd>
+            <dd><?php ECHO $_POST['nome']." ".$cpf; ?></dd>
             <dt>Prova</dt>
             <dd>Simulado Anasem</dd>
           </dl>
@@ -2623,7 +2637,7 @@ for($i=1;$i<=63;$i++)
         <div class="header-data">
           <dl class="dl-horizontal">
             <dt>Aluno</dt>
-            <dd><?php echo $nomes[$id].", ".$cpf[$id]; ?></dd>
+            <dd><?php ECHO $_POST['nome']." ".$cpf; ?></dd>
             <dt>Prova</dt>
             <dd>Simulado Anasem</dd>
           </dl>
@@ -2844,7 +2858,7 @@ for($i=1;$i<=63;$i++)
         <div class="header-data">
           <dl class="dl-horizontal">
             <dt>Aluno</dt>
-            <dd><?php echo $nomes[$id].", ".$cpf[$id]; ?></dd>
+            <dd><?php ECHO $_POST['nome']." ".$cpf; ?></dd>
             <dt>Prova</dt>
             <dd>Simulado Anasem</dd>
           </dl>
@@ -2859,6 +2873,24 @@ for($i=1;$i<=63;$i++)
       
       <h1 class="text-center">Caderno de Respostas - Questões Discursivas</h1>
       <div class="page-content">
+      
+        <table class="form form-table name-table">
+          <thead>
+            <tr>
+              <th><?php ECHO $nomes[$id]; ?></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>&nbsp;</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td>Assine conforme documento apresentado</td>
+            </tr>
+          </tfoot>
+        </table>
         <div class="dissetative-answer">
           <table class="table model">
             <tr>
@@ -2880,7 +2912,6 @@ for($i=1;$i<=63;$i++)
             <tr><td>14</td><td></td></tr>
             <tr><td>15</td><td></td></tr>
         </table>
-      </div> 
   
 
     </div><!--/page-content-->
@@ -2898,7 +2929,7 @@ for($i=1;$i<=63;$i++)
         <div class="header-data">
           <dl class="dl-horizontal">
             <dt>Aluno</dt>
-            <dd><?php echo $nomes[$id].", ".$cpf[$id]; ?></dd>
+            <dd><?php ECHO $_POST['nome']." ".$cpf; ?></dd>
             <dt>Prova</dt>
             <dd>Simulado Anasem</dd>
           </dl>
@@ -2913,6 +2944,24 @@ for($i=1;$i<=63;$i++)
       
       <h1 class="text-center">Caderno de Respostas - Questões Discursivas</h1>
       <div class="page-content">
+      
+        <table class="form form-table name-table">
+          <thead>
+            <tr>
+              <th><?php ECHO $nomes[$id]; ?></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>&nbsp;</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td>Assine conforme documento apresentado</td>
+            </tr>
+          </tfoot>
+        </table>
         <div class="dissetative-answer">
           <table class="table model">
             <tr>
@@ -2950,7 +2999,7 @@ for($i=1;$i<=63;$i++)
         <div class="header-data">
           <dl class="dl-horizontal">
             <dt>Aluno</dt>
-            <dd><?php echo $nomes[$id].", ".$cpf[$id]; ?></dd>
+            <dd><?php ECHO $_POST['nome']." ".$cpf; ?></dd>
             <dt>Prova</dt>
             <dd>Simulado Anasem</dd>
           </dl>
@@ -2965,6 +3014,24 @@ for($i=1;$i<=63;$i++)
       
       <h1 class="text-center">Caderno de Respostas - Questões Discursivas</h1>
       <div class="page-content">
+      
+        <table class="form form-table name-table">
+          <thead>
+            <tr>
+              <th><?php ECHO $nomes[$id]; ?></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>&nbsp;</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td>Assine conforme documento apresentado</td>
+            </tr>
+          </tfoot>
+        </table>
         <div class="dissetative-answer">
           <table class="table model">
             <tr>
@@ -3005,7 +3072,7 @@ for($i=1;$i<=63;$i++)
         <div class="header-data">
           <dl class="dl-horizontal">
             <dt>Aluno</dt>
-            <dd><?php echo $nomes[$id].", ".$cpf[$id]; ?></dd>
+            <dd><?php ECHO $_POST['nome']." ".$cpf; ?></dd>
             <dt>Prova</dt>
             <dd>Simulado Anasem</dd>
           </dl>
@@ -3020,489 +3087,509 @@ for($i=1;$i<=63;$i++)
       
       <h1 class="text-center">Caderno de Respostas - Questões Objetivas</h1>
       <div class="page-content">
+      
+        <table class="form form-table name-table">
+          <thead>
+            <tr>
+              <th><?php ECHO $nomes[$id]; ?></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>&nbsp;</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td>Assine conforme documento apresentado</td>
+            </tr>
+          </tfoot>
+        </table>
         
-        <table class="table table-bordered gabarito">
-          <tr>
-            <td>1</td>
-            <td>
+        <div class="gabarito-container">
+          <table class="table table-bordered gabarito">
+            <tr>
+              <td>1</td>
+              <td>
+                  <span class="gabarito-item">A</span>
+                  <span class="gabarito-item">B</span>
+                  <span class="gabarito-item">C</span>
+                  <span class="gabarito-item">D</span>
+              </td>
+              <td>31</td>
+              <td>
                 <span class="gabarito-item">A</span>
                 <span class="gabarito-item">B</span>
                 <span class="gabarito-item">C</span>
                 <span class="gabarito-item">D</span>
-            </td>
-            <td>31</td>
-            <td>
-              <span class="gabarito-item">A</span>
-              <span class="gabarito-item">B</span>
-              <span class="gabarito-item">C</span>
-              <span class="gabarito-item">D</span>
-            </td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>
-              <span class="gabarito-item">A</span>
-              <span class="gabarito-item">B</span>
-              <span class="gabarito-item">C</span>
-              <span class="gabarito-item">D</span>
-            </td>
-            <td>32</td>
-            <td>
-              <span class="gabarito-item">A</span>
-              <span class="gabarito-item">B</span>
-              <span class="gabarito-item">C</span>
-              <span class="gabarito-item">D</span>
-            </td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>
-              <span class="gabarito-item">A</span>
-              <span class="gabarito-item">B</span>
-              <span class="gabarito-item">C</span>
-              <span class="gabarito-item">D</span>
-            </td>
-            <td>33</td>
-            <td>
-              <span class="gabarito-item">A</span>
-              <span class="gabarito-item">B</span>
-              <span class="gabarito-item">C</span>
-              <span class="gabarito-item">D</span>
-            </td>
-          </tr>
-          <tr>
-            <td>4</td>
-            <td>
-              <span class="gabarito-item">A</span>
-              <span class="gabarito-item">B</span>
-              <span class="gabarito-item">C</span>
-              <span class="gabarito-item">D</span>
-            </td>
-            <td>34</td>
-            <td>
-              <span class="gabarito-item">A</span>
-              <span class="gabarito-item">B</span>
-              <span class="gabarito-item">C</span>
-              <span class="gabarito-item">D</span>
-            </td>
-          </tr>
-          <tr>
-            <td>5</td>
-            <td>
-              <span class="gabarito-item">A</span>
-              <span class="gabarito-item">B</span>
-              <span class="gabarito-item">C</span>
-              <span class="gabarito-item">D</span>
-            </td>
-            <td>35</td>
-            <td>
-              <span class="gabarito-item">A</span>
-              <span class="gabarito-item">B</span>
-              <span class="gabarito-item">C</span>
-              <span class="gabarito-item">D</span>
-            </td>
-          </tr>
-          <tr>
-            <td>6</td>
-            <td>
-              <span class="gabarito-item">A</span>
-              <span class="gabarito-item">B</span>
-              <span class="gabarito-item">C</span>
-              <span class="gabarito-item">D</span>
-            </td>
-            <td>36</td>
-            <td>
-              <span class="gabarito-item">A</span>
-              <span class="gabarito-item">B</span>
-              <span class="gabarito-item">C</span>
-              <span class="gabarito-item">D</span>
-            </td>
-          </tr>
-          <tr>
-            <td>7</td>
-            <td>
-              <span class="gabarito-item">A</span>
-              <span class="gabarito-item">B</span>
-              <span class="gabarito-item">C</span>
-              <span class="gabarito-item">D</span>
-            </td>
-            <td>37</td>
-            <td>
-              <span class="gabarito-item">A</span>
-              <span class="gabarito-item">B</span>
-              <span class="gabarito-item">C</span>
-              <span class="gabarito-item">D</span>
-            </td>
-          </tr>
-          <tr>
-            <td>8</td>
-            <td>
-              <span class="gabarito-item">A</span>
-              <span class="gabarito-item">B</span>
-              <span class="gabarito-item">C</span>
-              <span class="gabarito-item">D</span>
-            </td>
-            <td>38</td>
-            <td>
-              <span class="gabarito-item">A</span>
-              <span class="gabarito-item">B</span>
-              <span class="gabarito-item">C</span>
-              <span class="gabarito-item">D</span>
-            </td>
-          </tr>
-          <tr>
-            <td>9</td>
-            <td>
-              <span class="gabarito-item">A</span>
-              <span class="gabarito-item">B</span>
-              <span class="gabarito-item">C</span>
-              <span class="gabarito-item">D</span>
-            </td>
-            <td>39</td>
-            <td>
-              <span class="gabarito-item">A</span>
-              <span class="gabarito-item">B</span>
-              <span class="gabarito-item">C</span>
-              <span class="gabarito-item">D</span>
-            </td>
-          </tr>
-          <tr>
-            <td>10</td>
-            <td>
-              <span class="gabarito-item">A</span>
-              <span class="gabarito-item">B</span>
-              <span class="gabarito-item">C</span>
-              <span class="gabarito-item">D</span>
-            </td>
-            <td>40</td>
-            <td>
-              <span class="gabarito-item">A</span>
-              <span class="gabarito-item">B</span>
-              <span class="gabarito-item">C</span>
-              <span class="gabarito-item">D</span>
-            </td>
-          </tr>
-          <tr>
-            <td>11</td>
-            <td>
-              <span class="gabarito-item">A</span>
-              <span class="gabarito-item">B</span>
-              <span class="gabarito-item">C</span>
-              <span class="gabarito-item">D</span>
-            </td>
-            <td>41</td>
-            <td>
-              <span class="gabarito-item">A</span>
-              <span class="gabarito-item">B</span>
-              <span class="gabarito-item">C</span>
-              <span class="gabarito-item">D</span>
-            </td>
-          </tr>
-          <tr>
-            <td>12</td>
-            <td>
-              <span class="gabarito-item">A</span>
-              <span class="gabarito-item">B</span>
-              <span class="gabarito-item">C</span>
-              <span class="gabarito-item">D</span>
-            </td>
-            <td>42</td>
-            <td>
-              <span class="gabarito-item">A</span>
-              <span class="gabarito-item">B</span>
-              <span class="gabarito-item">C</span>
-              <span class="gabarito-item">D</span>
-            </td>
-          </tr>
-          <tr>
-            <td>13</td>
-            <td>
-              <span class="gabarito-item">A</span>
-              <span class="gabarito-item">B</span>
-              <span class="gabarito-item">C</span>
-              <span class="gabarito-item">D</span>
-            </td>
-            <td>43</td>
-            <td>
-              <span class="gabarito-item">A</span>
-              <span class="gabarito-item">B</span>
-              <span class="gabarito-item">C</span>
-              <span class="gabarito-item">D</span>
-            </td>
-          </tr>
-          <tr>
-            <td>14</td>
-            <td>
-              <span class="gabarito-item">A</span>
-              <span class="gabarito-item">B</span>
-              <span class="gabarito-item">C</span>
-              <span class="gabarito-item">D</span>
-            </td>
-            <td>44</td>
-            <td>
-              <span class="gabarito-item">A</span>
-              <span class="gabarito-item">B</span>
-              <span class="gabarito-item">C</span>
-              <span class="gabarito-item">D</span>
-            </td>
-          </tr>
-          <tr>
-            <td>15</td>
-            <td>
-              <span class="gabarito-item">A</span>
-              <span class="gabarito-item">B</span>
-              <span class="gabarito-item">C</span>
-              <span class="gabarito-item">D</span>
-            </td>
-            <td>45</td>
-            <td>
-              <span class="gabarito-item">A</span>
-              <span class="gabarito-item">B</span>
-              <span class="gabarito-item">C</span>
-              <span class="gabarito-item">D</span>
-            </td>
-          </tr>
-          <tr>
-            <td>16</td>
-            <td>
-              <span class="gabarito-item">A</span>
-              <span class="gabarito-item">B</span>
-              <span class="gabarito-item">C</span>
-              <span class="gabarito-item">D</span>
-            </td>
-            <td>46</td>
-            <td>
-              <span class="gabarito-item">A</span>
-              <span class="gabarito-item">B</span>
-              <span class="gabarito-item">C</span>
-              <span class="gabarito-item">D</span>
-            </td>
-          </tr>
-          <tr>
-            <td>17</td>
-            <td>
-              <span class="gabarito-item">A</span>
-              <span class="gabarito-item">B</span>
-              <span class="gabarito-item">C</span>
-              <span class="gabarito-item">D</span>
-            </td>
-            <td>47</td>
-            <td>
-              <span class="gabarito-item">A</span>
-              <span class="gabarito-item">B</span>
-              <span class="gabarito-item">C</span>
-              <span class="gabarito-item">D</span>
-            </td>
-          </tr>
-          <tr>
-            <td>18</td>
-            <td>
-              <span class="gabarito-item">A</span>
-              <span class="gabarito-item">B</span>
-              <span class="gabarito-item">C</span>
-              <span class="gabarito-item">D</span>
-            </td>
-            <td>48</td>
-            <td>
-              <span class="gabarito-item">A</span>
-              <span class="gabarito-item">B</span>
-              <span class="gabarito-item">C</span>
-              <span class="gabarito-item">D</span>
-            </td>
-          </tr>
-          <tr>
-            <td>19</td>
-            <td>
-              <span class="gabarito-item">A</span>
-              <span class="gabarito-item">B</span>
-              <span class="gabarito-item">C</span>
-              <span class="gabarito-item">D</span>
-            </td>
-            <td>49</td>
-            <td>
-              <span class="gabarito-item">A</span>
-              <span class="gabarito-item">B</span>
-              <span class="gabarito-item">C</span>
-              <span class="gabarito-item">D</span>
-            </td>
-          </tr>
-          <tr>
-            <td>20</td>
-            <td>
-              <span class="gabarito-item">A</span>
-              <span class="gabarito-item">B</span>
-              <span class="gabarito-item">C</span>
-              <span class="gabarito-item">D</span>
-            </td>
-            <td>50</td>
-            <td>
-              <span class="gabarito-item">A</span>
-              <span class="gabarito-item">B</span>
-              <span class="gabarito-item">C</span>
-              <span class="gabarito-item">D</span>
-            </td>
-          </tr>
-          <tr>
-            <td>21</td>
-            <td>
-              <span class="gabarito-item">A</span>
-              <span class="gabarito-item">B</span>
-              <span class="gabarito-item">C</span>
-              <span class="gabarito-item">D</span>
-            </td>
-            <td>51</td>
-            <td>
-              <span class="gabarito-item">A</span>
-              <span class="gabarito-item">B</span>
-              <span class="gabarito-item">C</span>
-              <span class="gabarito-item">D</span>
-            </td>
-          </tr>
-          <tr>
-            <td>22</td>
-            <td>
-              <span class="gabarito-item">A</span>
-              <span class="gabarito-item">B</span>
-              <span class="gabarito-item">C</span>
-              <span class="gabarito-item">D</span>
-            </td>
-            <td>52</td>
-            <td>
-              <span class="gabarito-item">A</span>
-              <span class="gabarito-item">B</span>
-              <span class="gabarito-item">C</span>
-              <span class="gabarito-item">D</span>
-            </td>
-          </tr>
-          <tr>
-            <td>23</td>
-            <td>
-              <span class="gabarito-item">A</span>
-              <span class="gabarito-item">B</span>
-              <span class="gabarito-item">C</span>
-              <span class="gabarito-item">D</span>
-            </td>
-            <td>53</td>
-            <td>
-              <span class="gabarito-item">A</span>
-              <span class="gabarito-item">B</span>
-              <span class="gabarito-item">C</span>
-              <span class="gabarito-item">D</span>
-            </td>
-          </tr>
-          <tr>
-            <td>24</td>
-            <td>
-              <span class="gabarito-item">A</span>
-              <span class="gabarito-item">B</span>
-              <span class="gabarito-item">C</span>
-              <span class="gabarito-item">D</span>
-            </td>
-            <td>54</td>
-            <td>
-              <span class="gabarito-item">A</span>
-              <span class="gabarito-item">B</span>
-              <span class="gabarito-item">C</span>
-              <span class="gabarito-item">D</span>
-            </td>
-          </tr>
-          <tr>
-            <td>25</td>
-            <td>
-              <span class="gabarito-item">A</span>
-              <span class="gabarito-item">B</span>
-              <span class="gabarito-item">C</span>
-              <span class="gabarito-item">D</span>
-            </td>
-            <td>55</td>
-            <td>
-              <span class="gabarito-item">A</span>
-              <span class="gabarito-item">B</span>
-              <span class="gabarito-item">C</span>
-              <span class="gabarito-item">D</span>
-            </td>
-          </tr>
-          <tr>
-            <td>26</td>
-            <td>
-              <span class="gabarito-item">A</span>
-              <span class="gabarito-item">B</span>
-              <span class="gabarito-item">C</span>
-              <span class="gabarito-item">D</span>
-            </td>
-            <td>56</td>
-            <td>
-              <span class="gabarito-item">A</span>
-              <span class="gabarito-item">B</span>
-              <span class="gabarito-item">C</span>
-              <span class="gabarito-item">D</span>
-            </td>
-          </tr>
-          <tr>
-            <td>27</td>
-            <td>
-              <span class="gabarito-item">A</span>
-              <span class="gabarito-item">B</span>
-              <span class="gabarito-item">C</span>
-              <span class="gabarito-item">D</span>
-            </td>
-            <td>57</td>
-            <td>
-              <span class="gabarito-item">A</span>
-              <span class="gabarito-item">B</span>
-              <span class="gabarito-item">C</span>
-              <span class="gabarito-item">D</span>
-            </td>
-          </tr>
-          <tr>
-            <td>28</td>
-            <td>
-              <span class="gabarito-item">A</span>
-              <span class="gabarito-item">B</span>
-              <span class="gabarito-item">C</span>
-              <span class="gabarito-item">D</span>
-            </td>
-            <td>58</td>
-            <td>
-              <span class="gabarito-item">A</span>
-              <span class="gabarito-item">B</span>
-              <span class="gabarito-item">C</span>
-              <span class="gabarito-item">D</span>
-            </td>
-          </tr>
-          <tr>
-            <td>29</td>
-            <td>
-              <span class="gabarito-item">A</span>
-              <span class="gabarito-item">B</span>
-              <span class="gabarito-item">C</span>
-              <span class="gabarito-item">D</span>
-            </td>
-            <td>59</td>
-            <td>
-              <span class="gabarito-item">A</span>
-              <span class="gabarito-item">B</span>
-              <span class="gabarito-item">C</span>
-              <span class="gabarito-item">D</span>
-            </td>
-          </tr>
-          <tr>
-            <td>30</td>
-            <td>
-              <span class="gabarito-item">A</span>
-              <span class="gabarito-item">B</span>
-              <span class="gabarito-item">C</span>
-              <span class="gabarito-item">D</span>
-            </td>
-            <td>60</td>
-            <td>
-              <span class="gabarito-item">A</span>
-              <span class="gabarito-item">B</span>
-              <span class="gabarito-item">C</span>
-              <span class="gabarito-item">D</span>
-            </td>
-          </tr>
-        </table>
+              </td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>
+                <span class="gabarito-item">A</span>
+                <span class="gabarito-item">B</span>
+                <span class="gabarito-item">C</span>
+                <span class="gabarito-item">D</span>
+              </td>
+              <td>32</td>
+              <td>
+                <span class="gabarito-item">A</span>
+                <span class="gabarito-item">B</span>
+                <span class="gabarito-item">C</span>
+                <span class="gabarito-item">D</span>
+              </td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>
+                <span class="gabarito-item">A</span>
+                <span class="gabarito-item">B</span>
+                <span class="gabarito-item">C</span>
+                <span class="gabarito-item">D</span>
+              </td>
+              <td>33</td>
+              <td>
+                <span class="gabarito-item">A</span>
+                <span class="gabarito-item">B</span>
+                <span class="gabarito-item">C</span>
+                <span class="gabarito-item">D</span>
+              </td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>
+                <span class="gabarito-item">A</span>
+                <span class="gabarito-item">B</span>
+                <span class="gabarito-item">C</span>
+                <span class="gabarito-item">D</span>
+              </td>
+              <td>34</td>
+              <td>
+                <span class="gabarito-item">A</span>
+                <span class="gabarito-item">B</span>
+                <span class="gabarito-item">C</span>
+                <span class="gabarito-item">D</span>
+              </td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>
+                <span class="gabarito-item">A</span>
+                <span class="gabarito-item">B</span>
+                <span class="gabarito-item">C</span>
+                <span class="gabarito-item">D</span>
+              </td>
+              <td>35</td>
+              <td>
+                <span class="gabarito-item">A</span>
+                <span class="gabarito-item">B</span>
+                <span class="gabarito-item">C</span>
+                <span class="gabarito-item">D</span>
+              </td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td>
+                <span class="gabarito-item">A</span>
+                <span class="gabarito-item">B</span>
+                <span class="gabarito-item">C</span>
+                <span class="gabarito-item">D</span>
+              </td>
+              <td>36</td>
+              <td>
+                <span class="gabarito-item">A</span>
+                <span class="gabarito-item">B</span>
+                <span class="gabarito-item">C</span>
+                <span class="gabarito-item">D</span>
+              </td>
+            </tr>
+            <tr>
+              <td>7</td>
+              <td>
+                <span class="gabarito-item">A</span>
+                <span class="gabarito-item">B</span>
+                <span class="gabarito-item">C</span>
+                <span class="gabarito-item">D</span>
+              </td>
+              <td>37</td>
+              <td>
+                <span class="gabarito-item">A</span>
+                <span class="gabarito-item">B</span>
+                <span class="gabarito-item">C</span>
+                <span class="gabarito-item">D</span>
+              </td>
+            </tr>
+            <tr>
+              <td>8</td>
+              <td>
+                <span class="gabarito-item">A</span>
+                <span class="gabarito-item">B</span>
+                <span class="gabarito-item">C</span>
+                <span class="gabarito-item">D</span>
+              </td>
+              <td>38</td>
+              <td>
+                <span class="gabarito-item">A</span>
+                <span class="gabarito-item">B</span>
+                <span class="gabarito-item">C</span>
+                <span class="gabarito-item">D</span>
+              </td>
+            </tr>
+            <tr>
+              <td>9</td>
+              <td>
+                <span class="gabarito-item">A</span>
+                <span class="gabarito-item">B</span>
+                <span class="gabarito-item">C</span>
+                <span class="gabarito-item">D</span>
+              </td>
+              <td>39</td>
+              <td>
+                <span class="gabarito-item">A</span>
+                <span class="gabarito-item">B</span>
+                <span class="gabarito-item">C</span>
+                <span class="gabarito-item">D</span>
+              </td>
+            </tr>
+            <tr>
+              <td>10</td>
+              <td>
+                <span class="gabarito-item">A</span>
+                <span class="gabarito-item">B</span>
+                <span class="gabarito-item">C</span>
+                <span class="gabarito-item">D</span>
+              </td>
+              <td>40</td>
+              <td>
+                <span class="gabarito-item">A</span>
+                <span class="gabarito-item">B</span>
+                <span class="gabarito-item">C</span>
+                <span class="gabarito-item">D</span>
+              </td>
+            </tr>
+            <tr>
+              <td>11</td>
+              <td>
+                <span class="gabarito-item">A</span>
+                <span class="gabarito-item">B</span>
+                <span class="gabarito-item">C</span>
+                <span class="gabarito-item">D</span>
+              </td>
+              <td>41</td>
+              <td>
+                <span class="gabarito-item">A</span>
+                <span class="gabarito-item">B</span>
+                <span class="gabarito-item">C</span>
+                <span class="gabarito-item">D</span>
+              </td>
+            </tr>
+            <tr>
+              <td>12</td>
+              <td>
+                <span class="gabarito-item">A</span>
+                <span class="gabarito-item">B</span>
+                <span class="gabarito-item">C</span>
+                <span class="gabarito-item">D</span>
+              </td>
+              <td>42</td>
+              <td>
+                <span class="gabarito-item">A</span>
+                <span class="gabarito-item">B</span>
+                <span class="gabarito-item">C</span>
+                <span class="gabarito-item">D</span>
+              </td>
+            </tr>
+            <tr>
+              <td>13</td>
+              <td>
+                <span class="gabarito-item">A</span>
+                <span class="gabarito-item">B</span>
+                <span class="gabarito-item">C</span>
+                <span class="gabarito-item">D</span>
+              </td>
+              <td>43</td>
+              <td>
+                <span class="gabarito-item">A</span>
+                <span class="gabarito-item">B</span>
+                <span class="gabarito-item">C</span>
+                <span class="gabarito-item">D</span>
+              </td>
+            </tr>
+            <tr>
+              <td>14</td>
+              <td>
+                <span class="gabarito-item">A</span>
+                <span class="gabarito-item">B</span>
+                <span class="gabarito-item">C</span>
+                <span class="gabarito-item">D</span>
+              </td>
+              <td>44</td>
+              <td>
+                <span class="gabarito-item">A</span>
+                <span class="gabarito-item">B</span>
+                <span class="gabarito-item">C</span>
+                <span class="gabarito-item">D</span>
+              </td>
+            </tr>
+            <tr>
+              <td>15</td>
+              <td>
+                <span class="gabarito-item">A</span>
+                <span class="gabarito-item">B</span>
+                <span class="gabarito-item">C</span>
+                <span class="gabarito-item">D</span>
+              </td>
+              <td>45</td>
+              <td>
+                <span class="gabarito-item">A</span>
+                <span class="gabarito-item">B</span>
+                <span class="gabarito-item">C</span>
+                <span class="gabarito-item">D</span>
+              </td>
+            </tr>
+            <tr>
+              <td>16</td>
+              <td>
+                <span class="gabarito-item">A</span>
+                <span class="gabarito-item">B</span>
+                <span class="gabarito-item">C</span>
+                <span class="gabarito-item">D</span>
+              </td>
+              <td>46</td>
+              <td>
+                <span class="gabarito-item">A</span>
+                <span class="gabarito-item">B</span>
+                <span class="gabarito-item">C</span>
+                <span class="gabarito-item">D</span>
+              </td>
+            </tr>
+            <tr>
+              <td>17</td>
+              <td>
+                <span class="gabarito-item">A</span>
+                <span class="gabarito-item">B</span>
+                <span class="gabarito-item">C</span>
+                <span class="gabarito-item">D</span>
+              </td>
+              <td>47</td>
+              <td>
+                <span class="gabarito-item">A</span>
+                <span class="gabarito-item">B</span>
+                <span class="gabarito-item">C</span>
+                <span class="gabarito-item">D</span>
+              </td>
+            </tr>
+            <tr>
+              <td>18</td>
+              <td>
+                <span class="gabarito-item">A</span>
+                <span class="gabarito-item">B</span>
+                <span class="gabarito-item">C</span>
+                <span class="gabarito-item">D</span>
+              </td>
+              <td>48</td>
+              <td>
+                <span class="gabarito-item">A</span>
+                <span class="gabarito-item">B</span>
+                <span class="gabarito-item">C</span>
+                <span class="gabarito-item">D</span>
+              </td>
+            </tr>
+            <tr>
+              <td>19</td>
+              <td>
+                <span class="gabarito-item">A</span>
+                <span class="gabarito-item">B</span>
+                <span class="gabarito-item">C</span>
+                <span class="gabarito-item">D</span>
+              </td>
+              <td>49</td>
+              <td>
+                <span class="gabarito-item">A</span>
+                <span class="gabarito-item">B</span>
+                <span class="gabarito-item">C</span>
+                <span class="gabarito-item">D</span>
+              </td>
+            </tr>
+            <tr>
+              <td>20</td>
+              <td>
+                <span class="gabarito-item">A</span>
+                <span class="gabarito-item">B</span>
+                <span class="gabarito-item">C</span>
+                <span class="gabarito-item">D</span>
+              </td>
+              <td>50</td>
+              <td>
+                <span class="gabarito-item">A</span>
+                <span class="gabarito-item">B</span>
+                <span class="gabarito-item">C</span>
+                <span class="gabarito-item">D</span>
+              </td>
+            </tr>
+            <tr>
+              <td>21</td>
+              <td>
+                <span class="gabarito-item">A</span>
+                <span class="gabarito-item">B</span>
+                <span class="gabarito-item">C</span>
+                <span class="gabarito-item">D</span>
+              </td>
+              <td>51</td>
+              <td>
+                <span class="gabarito-item">A</span>
+                <span class="gabarito-item">B</span>
+                <span class="gabarito-item">C</span>
+                <span class="gabarito-item">D</span>
+              </td>
+            </tr>
+            <tr>
+              <td>22</td>
+              <td>
+                <span class="gabarito-item">A</span>
+                <span class="gabarito-item">B</span>
+                <span class="gabarito-item">C</span>
+                <span class="gabarito-item">D</span>
+              </td>
+              <td>52</td>
+              <td>
+                <span class="gabarito-item">A</span>
+                <span class="gabarito-item">B</span>
+                <span class="gabarito-item">C</span>
+                <span class="gabarito-item">D</span>
+              </td>
+            </tr>
+            <tr>
+              <td>23</td>
+              <td>
+                <span class="gabarito-item">A</span>
+                <span class="gabarito-item">B</span>
+                <span class="gabarito-item">C</span>
+                <span class="gabarito-item">D</span>
+              </td>
+              <td>53</td>
+              <td>
+                <span class="gabarito-item">A</span>
+                <span class="gabarito-item">B</span>
+                <span class="gabarito-item">C</span>
+                <span class="gabarito-item">D</span>
+              </td>
+            </tr>
+            <tr>
+              <td>24</td>
+              <td>
+                <span class="gabarito-item">A</span>
+                <span class="gabarito-item">B</span>
+                <span class="gabarito-item">C</span>
+                <span class="gabarito-item">D</span>
+              </td>
+              <td>54</td>
+              <td>
+                <span class="gabarito-item">A</span>
+                <span class="gabarito-item">B</span>
+                <span class="gabarito-item">C</span>
+                <span class="gabarito-item">D</span>
+              </td>
+            </tr>
+            <tr>
+              <td>25</td>
+              <td>
+                <span class="gabarito-item">A</span>
+                <span class="gabarito-item">B</span>
+                <span class="gabarito-item">C</span>
+                <span class="gabarito-item">D</span>
+              </td>
+              <td>55</td>
+              <td>
+                <span class="gabarito-item">A</span>
+                <span class="gabarito-item">B</span>
+                <span class="gabarito-item">C</span>
+                <span class="gabarito-item">D</span>
+              </td>
+            </tr>
+            <tr>
+              <td>26</td>
+              <td>
+                <span class="gabarito-item">A</span>
+                <span class="gabarito-item">B</span>
+                <span class="gabarito-item">C</span>
+                <span class="gabarito-item">D</span>
+              </td>
+              <td>56</td>
+              <td>
+                <span class="gabarito-item">A</span>
+                <span class="gabarito-item">B</span>
+                <span class="gabarito-item">C</span>
+                <span class="gabarito-item">D</span>
+              </td>
+            </tr>
+            <tr>
+              <td>27</td>
+              <td>
+                <span class="gabarito-item">A</span>
+                <span class="gabarito-item">B</span>
+                <span class="gabarito-item">C</span>
+                <span class="gabarito-item">D</span>
+              </td>
+              <td>57</td>
+              <td>
+                <span class="gabarito-item">A</span>
+                <span class="gabarito-item">B</span>
+                <span class="gabarito-item">C</span>
+                <span class="gabarito-item">D</span>
+              </td>
+            </tr>
+            <tr>
+              <td>28</td>
+              <td>
+                <span class="gabarito-item">A</span>
+                <span class="gabarito-item">B</span>
+                <span class="gabarito-item">C</span>
+                <span class="gabarito-item">D</span>
+              </td>
+              <td>58</td>
+              <td>
+                <span class="gabarito-item">A</span>
+                <span class="gabarito-item">B</span>
+                <span class="gabarito-item">C</span>
+                <span class="gabarito-item">D</span>
+              </td>
+            </tr>
+            <tr>
+              <td>29</td>
+              <td>
+                <span class="gabarito-item">A</span>
+                <span class="gabarito-item">B</span>
+                <span class="gabarito-item">C</span>
+                <span class="gabarito-item">D</span>
+              </td>
+              <td>59</td>
+              <td>
+                <span class="gabarito-item">A</span>
+                <span class="gabarito-item">B</span>
+                <span class="gabarito-item">C</span>
+                <span class="gabarito-item">D</span>
+              </td>
+            </tr>
+            <tr>
+              <td>30</td>
+              <td>
+                <span class="gabarito-item">A</span>
+                <span class="gabarito-item">B</span>
+                <span class="gabarito-item">C</span>
+                <span class="gabarito-item">D</span>
+              </td>
+              <td>60</td>
+              <td>
+                <span class="gabarito-item">A</span>
+                <span class="gabarito-item">B</span>
+                <span class="gabarito-item">C</span>
+                <span class="gabarito-item">D</span>
+              </td>
+            </tr>
+          </table>
+        </div>
 
     </div><!--/page-content-->
 

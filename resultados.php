@@ -19,8 +19,7 @@ $_SESSION['data'] = $_POST['data'];
     Sala:<input type="text" name="sala" value=<?php echo $_SESSION['sala'] ?> readonly><br>
     Data:<input type="text" name="sala" value=<?php echo $_SESSION['data'] ?> readonly><br>
     Nome do Aluno:<input type="text" name="nome" required><br>
-    CPF:<input type="text" name="cpf" onBlur="ValidarCPF(form1.cpf);" 
-onKeyPress="MascaraCPF(form1.cpf);" maxlength="14" required><br>
+    CPF:<input type="text" name="cpf" onBlur="ValidarCPF(form1.cpf);" onKeyPress="MascaraCPF(form1.cpf);" maxlength="14" required><br>
     <button type="submit">Enviar</button>
 </form>
 
