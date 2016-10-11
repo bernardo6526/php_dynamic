@@ -36,7 +36,7 @@ $t = "https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl=$nepossivel";
 $questao = array();
 for($i=1;$i<=63;$i++)
 {
-  $questao[$i] = "<img src = 'https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl=Questão%20$i'/>";
+  $questao[$i] = "<img src = 'img/questions-codes/$i.svg'/>";
 
 }
 
